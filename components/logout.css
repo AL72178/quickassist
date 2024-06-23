@@ -1,0 +1,70 @@
+@import url(../assets/css/util.css);
+
+
+body {
+    margin: var(--header-height) 0 0 0;
+    padding: 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+  }
+  
+  .header {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5px;
+    background-color: var(--text-color-light);
+  }
+  
+  
+  .main-content {
+    text-align: center;
+    padding: 180px 0px;
+  }
+  
+  .logout-heading {
+    font-size: 2.5rem;
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+    margin-bottom: 1rem;
+  }
+  
+  .logout-subheading {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--first-color);
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #5639CC;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .main-content {
+      max-width: 600px;
+      margin: auto;
+    }
+  }
+
+
+  .header img {
+    margin-top: -140px;
+    height: 100px;
+    width: 100px;
+  } 
