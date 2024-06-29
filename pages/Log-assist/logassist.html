@@ -25,7 +25,7 @@
                 <input type="text" id="arc" name="arc">
             </div>
             <div class="form-group">
-                <label for="mlh">MLH:</label>
+                <label for="mlh">MLH (MM/DD/YYYY):</label>     <!-- 2024-06-30 Added MLH label -->
                 <input type="text" id="mlh" name="mlh">
             </div>
             <div class="form-group">
@@ -36,7 +36,7 @@
         <div class="right-section">
             <div class="form-group adjustment-note">
                 <label for="reason">Adjustment note:</label>
-                <textarea id="reason" name="reason" rows="4"></textarea>
+                <textarea id="reason" name="reason" rows="4"></textarea> <!-- 2024-06-30 Added adjustment note label -->
             </div>
             <div class="form-group partial-log-button">
                 <button id="partialLogButton">Generate Partial Log</button>
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="primary-button">
-        <button id="completeLogButton">Generate Complete Log</button>
+        <button id="completeLogButton">Generate Complete Log</button> <!-- 2024-06-30 Added generate complete log button -->
     </div>
     <div class="output-container">
         <button class="copy-button" onclick="copyToClipboard()">Copy</button>
@@ -53,5 +53,3 @@
     <script src="./logassist.js"></script>
 </body>
 </html>
-
-

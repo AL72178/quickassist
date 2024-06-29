@@ -1,16 +1,28 @@
-# Responsive Sidebar Submenu
-## [Watch it on youtube](https://youtu.be/PUmmi4O3_5I)
-### Responsive Sidebar Submenu
-Beautiful sidebar menu with submenu, which is hidden and shown, using HTML CSS And JavaScript..
-Don't forget to join the channel for more videos like this. [Bedimcode](https://www.youtube.com/c/Bedimcode)
+# Quick Assist Web Application
 
-![Responsive Sidebar Submenu](/preview.png)
+Welcome to Quick Assist, a web application designed to streamline various tasks with specialized tools.
 
+## Tools Overview
 
+### Date Gap
+Calculate the gap between two dates.
 
+### Julian Convert
+Convert dates between Gregorian and Julian calendar formats.
 
+### Log Assist
+Draft logs efficiently with predefined formats.
 
+### Letter Break
+Generate WGS inquiry letters formatted to fit character limitations.
 
+### Smart Log (Under Development)
+Tool for managing logs with advanced features (coming soon).
+
+## Quick Links
+Access frequently used external resources easily.
+
+## File Structure
 
 /mainproject
 |
@@ -46,3 +58,16 @@ Don't forget to join the channel for more videos like this. [Bedimcode](https://
 |   |   |__wgsletter.js
 |
 |__index.html
+
+
+## Usage
+Simply click on the respective tool in the navigation menu to access its functionality.
+
+## Contributing
+Contributions are welcome! Fork the repository, make your changes, and submit a pull request.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+## Owner 
+Develop and Coded by: Nish | Email ID: singhnishant349@outlook.com
