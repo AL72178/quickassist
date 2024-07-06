@@ -12,6 +12,26 @@ QUick Assist V2.0
 
 -- Still Under-Developement
 
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+### Update -- 07/06/2024 
+QUick Assist V2.1.0
+
+## Log Out Page
+-- Logout Page style is updated. New Look provided to logout.
+
+## Log Assist
+1. Remove permanent Identifier ID, now user can input there own IDs and it will store in local storage so that user does not have to input ID again.
+
+2. Adjustment Note Input: Pre text added inside adjustment note input box.
+
+### Search Bar
+-- Search bar removed.
+
+## Smart Log.
+
+-- Still Under-Developement
+
 ## WGS Letter -- Letter Break
 
 -- WGS Letter menu name changes to "Letter Break"

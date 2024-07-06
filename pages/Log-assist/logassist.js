@@ -1,9 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve the stored Identifier from localStorage, or set a default if not present
+    let identifier = localStorage.getItem('identifier');
+    if (!identifier) {
+        identifier = ''; // Set an empty default value
+    }
+
+    // Set the initial value of the input field
+    document.getElementById('identifier').value = identifier;
+
     document.getElementById('partialLogButton').addEventListener('click', function() {
         const adjustmentNote = document.getElementById('reason').value;
-        const log = `Adjustment note: ${adjustmentNote}`;
         const modeToggle = document.getElementById('modeToggle');
-        const formattedText = modeToggle.checked ? formatLinesCIW(log, 74) : formatLinesWGS(log, 74);
+        const formattedText = modeToggle.checked ? formatLinesCIW(adjustmentNote, 74) : formatLinesWGS(adjustmentNote, 74);
         displayOutput(formattedText);
     });
 
@@ -11,12 +19,17 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         const reqId = formatText(document.getElementById('req_id').value);
         const arc = formatText(document.getElementById('arc').value);
-        const mlh = formatText(document.getElementById('mlh').value);
-        const reason = formatText(document.getElementById('reason').value);
+        const mlhGregorian = document.getElementById('mlh').value; // Get Gregorian date from input
+        const mlhJulian = gregorianToJulianDate(mlhGregorian); // Convert Gregorian to Julian date
         const identifier = formatText(document.getElementById('identifier').value);
 
-        // Add the concatenation before the adjustment note only for the complete log
-        const template = `Inquiry No.: ${reqId} | ARC Code: ${arc} | MLH: ${mlh} | Adjustment made in claim as ${reason} | -- ${identifier}`; // 2024-06-30 Added concatenation for adjustment note
+        // Store the updated identifier in localStorage
+        localStorage.setItem('identifier', identifier);
+
+        const reason = formatText(document.getElementById('reason').value);
+
+        // Modify the template to include only the auto-converted Julian date
+        const template = `Inquiry No.: ${reqId} | ARC Code: ${arc} | MLH: ${mlhJulian} | ${reason} | -- ${identifier}`;
 
         const modeToggle = document.getElementById('modeToggle');
         const formattedText = modeToggle.checked ? formatLinesCIW(template, 74) : formatLinesWGS(template, 74);
@@ -106,28 +119,6 @@ function copyToClipboard() {
         console.error('Failed to copy text: ', err);
     });
 }
-
-
-// Added new functionality to auto convert date to JUlian in Response. (6-16-24)
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('completeLogButton').addEventListener('click', function(event) {
-        event.preventDefault();
-        const reqId = formatText(document.getElementById('req_id').value);
-        const arc = formatText(document.getElementById('arc').value);
-        const mlhGregorian = document.getElementById('mlh').value; // Get Gregorian date from input
-        const mlhJulian = gregorianToJulianDate(mlhGregorian); // Convert Gregorian to Julian date
-        const identifier = formatText(document.getElementById('identifier').value);
-        const reason = formatText(document.getElementById('reason').value);
-
-        // Modify the template to include only the auto-converted Julian date
-        const template = `Inquiry No.: ${reqId} | ARC Code: ${arc} | MLH: ${mlhJulian} | Adjustment made in claim as ${reason} | -- ${identifier}`;
-
-        const modeToggle = document.getElementById('modeToggle');
-        const formattedText = modeToggle.checked ? formatLinesCIW(template, 74) : formatLinesWGS(template, 74);
-        
-        displayOutput(formattedText);
-    });
-});
 
 function gregorianToJulianDate(gregorianDate) {
     const dateParts = gregorianDate.split('/');
