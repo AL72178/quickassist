@@ -6,7 +6,7 @@ function convertToJulian() {
     const januaryFirst = new Date(year, 0, 1);
     const daysDifference = Math.floor((gregorianDate - januaryFirst) / (24 * 60 * 60 * 1000)) + 1;
     const julianDate = parseInt(year.toString().slice(2) + daysDifference.toString().padStart(3, '0'));
-    document.getElementById('result').innerText = `Julian Date: ${julianDate}`;
+    document.getElementById('result-julian').innerText = `Julian Date: ${julianDate}`;
 }
 function convertToGregorian() {
     const julianDate = parseInt(document.getElementById('julianDate').value);
@@ -15,7 +15,7 @@ function convertToGregorian() {
     const gregorianDate = new Date(year, 0, 1);
     gregorianDate.setDate(gregorianDate.getDate() + days - 1);
     const result = `${(gregorianDate.getMonth() + 1).toString().padStart(2, '0')}/${gregorianDate.getDate().toString().padStart(2, '0')}/${gregorianDate.getFullYear()}`;
-    document.getElementById('result').innerText = `Gregorian Date: ${result}`;
+    document.getElementById('result-julian').innerText = `Gregorian Date: ${result}`;
 }
 function clearFields() {
     document.getElementById('gregorianDate').value = '';

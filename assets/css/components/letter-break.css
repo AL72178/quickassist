@@ -1,38 +1,22 @@
-/*========== UTILITY ==========*/
-@import url(../../assets/css/util.css);
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .incontainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px 40px; 
+    background-color: var(--container-color);
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+  }
 
-/* Common styles for buttons */
-.button {
-    height: 30px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-/* Primary button style */
-.primaryButton {
-    background-color: var(--first-color);
-    color: white;
-}
-
-/* Secondary button style */
-.secondaryButton {
-    background-color: #fff;
-    color: var(--first-color);
-}
-
-.button:hover {
-    background-color: var(--first-color);
-    color: var(--first-color-light);
-    transition: .2s ease-in;
-}
-
-body {
-    margin: 0 80px;
-    padding: 0;
-}
 
 .heading {
     text-align: center;
@@ -75,13 +59,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%; /* Adjust as needed */
-    margin: 0 auto; /* Center the container horizontally */
+    width: 80%; 
+    margin: 0 auto; 
 }
 
 #inputText {
-    flex-grow: 1; /* Allow the textarea to grow to fill available space */
-    margin-right: 10px; /* Adjust spacing between textarea and buttons */
+    flex-grow: 1; 
+    margin-right: 10px; 
 }
 
 .btncounter {
@@ -90,25 +74,25 @@ body {
 }
 
 .textCounter {
-    margin-right: auto; /* Align text counter to the right */
+    margin-right: auto; 
     padding-left: 5px;
-    font-size: 14px; /* Reduce font size */
+    font-size: 14px; 
 }
 
 #outputBoxes {
     width: calc(100% - 20px);
-    margin: 0 10px;
+    margin: 50px 10px;
 }
 
 .copied {
     position: fixed;
     top: 50%;
-    right: 300px; /* Shift copied animation to the right */
+    right: 300px; 
     transform: translateY(-50%);
     padding: 15px 30px;
     border-radius: 5px;
     animation: fadeOut 1s forwards;
-    background-color: var(--first-color); /* Change background color */
+    background-color: var(--first-color); 
     color: white;
 }
 
@@ -123,7 +107,7 @@ body {
 
 /* Reduce usability for mobile devices */
 @media (max-width: 768px) {
-    /* Hide viewport meta tag */
+   
     meta[name="viewport"] {
         display: none;
     }

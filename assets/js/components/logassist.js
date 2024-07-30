@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         const reqId = formatText(document.getElementById('req_id').value);
         const arc = formatText(document.getElementById('arc').value);
-        const mlhGregorian = document.getElementById('mlh').value; // Get Gregorian date from input
-        const mlhJulian = gregorianToJulianDate(mlhGregorian); // Convert Gregorian to Julian date
+        const mlhInput = document.getElementById('mlh').value; // Get date from input
+        const mlhJulian = isJulianDate(mlhInput) ? mlhInput : gregorianToJulianDate(mlhInput); // Check if the date is Julian or convert if Gregorian
         const identifier = formatText(document.getElementById('identifier').value);
 
         // Store the updated identifier in localStorage
@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const formattedText = modeToggle.checked ? formatLinesCIW(template, 74) : formatLinesWGS(template, 74);
         
         displayOutput(formattedText);
+    });
+
+    document.getElementById('resetButton').addEventListener('click', function() {
+        resetForm();
     });
 
     document.getElementById('modeToggle').addEventListener('change', function() {
@@ -152,4 +156,18 @@ function gregorianToJulianDate(gregorianDate) {
 
 function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+function isJulianDate(date) {
+    // Check if the date is in Julian format (assuming a simple 5-digit format: YYDDD)
+    return /^\d{5}$/.test(date);
+}
+
+function resetForm() {
+    document.getElementById('req_id').value = '';
+    document.getElementById('arc').value = '';
+    document.getElementById('mlh').value = '';
+    document.getElementById('identifier').value = '';
+    document.getElementById('reason').value = 'Adjustment made in claim as per ';
+    document.getElementById('output').textContent = '';
 }

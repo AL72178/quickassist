@@ -35,3 +35,22 @@ QUick Assist V2.1.0
 ## WGS Letter -- Letter Break
 
 -- WGS Letter menu name changes to "Letter Break"
+
+
+
+
+
+### Update -- 07/30/2024 
+QUick Assist V3.0
+
+-- Major Modification Made in the website, interms of UI, and Overall Look.
+
+## Log Out Page
+-- Removed. Not Required.
+
+## Log Assist
+1. User can now paste Julian as well as Normal date in the MLH box.
+
+## Smart Log.
+
+-- Still Under-Developement

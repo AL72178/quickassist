@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUICK ASSIST - Help Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/utility.css"> 
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/components/footer.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: var(--body-font);
+            background-color: var(--body-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--first-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .name {
+            margin: 10px 0;
+            font-size: var(normal-font-size);
+            font-weight: bold;
+        }
+
+        /* Main Container Styles */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--container-color);
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius-2);
+            flex: 1; 
+        }
+
+        /* Heading Styles */
+        h1 {
+            color: var(--first-color);
+            font-size: var(--h1-font-size);
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            color: var(--first-color);
+            font-size: 1.25rem;
+            border-bottom: 2px solid var(--first-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Button Styles */
+        .btn-home {
+            display: block;
+            width: 200px;
+            margin: 2rem auto;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-2);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        /* Footer Styles */
+        footer {
+            position: relative; 
+            margin-top: auto; 
+            width: 100%;
+            background: linear-gradient(to right, #00093c, #2d0b00);
+            color: #fff;
+            padding: 60px 0 30px;
+            border-top-left-radius: 125px;
+            font-size: 13px;
+            line-height: 20px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 0 20px;
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 767px) {
+            .container {
+                padding: 1rem; 
+            }
+
+            .btn-home {
+                width: 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>QUICK ASSIST</h1>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>About the Developer</h2>
+            <h4 class="name">Nishant Singh</h4>
+            <p>Associate Claim - PDR</p>
+            <p>Gurgaon - IND</p>
+            <p class="email-id">nishant.singh@elevancehealth.com</p>
+        </div>
+        <div class="section">
+            <h2>Language and Framework</h2>
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+            <p>Google Font</p>
+            <p>Boxicons</p>
+        </div>
+        <div class="section">
+            <h2>Key Features of QUICK ASSIST</h2>
+            <p><strong>Date Gap:</strong> Calculates the gap between two dates. Users can input dates in MM/DD/YYYY format to quickly determine the interval between them.</p>
+            <p><strong>Julian Convert:</strong> Converts Gregorian dates to Julian dates and vice versa, simplifying date conversions.</p>
+            <p><strong>Log Assist:</strong> Drafts log notes in a standardized format with minimal input from the user. It currently supports two modes:</p>
+            <ul>
+                <li><strong>WGS Mode:</strong> Paste your log drafted from here into WGS. Draft only adjustment note through partial log button.</li>
+                <li><strong>CIW Mode:</strong> Designed to prevent line breaks that hinder readability in CIW logs. Ensures that characters never break once validated in CIW.</li>
+            </ul>
+            <p><strong>Identifier:</strong> Auto-fetches your domain ID, so you don't need to type it again.</p>
+            <p><strong>MLH:</strong> Either paste the date (MM/DD/YYYY) or Julian (YYDDD); it will auto convert the end result into Julian.</p>
+            <p><strong>Letter Break:</strong> Breaks comments into multiple lines, adhering to the CIW - Request Letter's 67-character limit, ensuring clarity and readability.</p>
+            <p><strong>Smart Log (Under Development):</strong> Provides PDR verbiage and manual FFT verbiage based on common scenarios. Includes:</p>
+            <ul>
+                <li>A search option to find verbiage based on specific needs.</li>
+                <li>Editable comments to correct grammatical errors and enhance accuracy.</li>
+                <li>The ability to copy and paste comments directly.</li>
+            </ul>
+        </div>
+    </div>
+    <button class="btn-home" onclick="window.location.href='index.html'">Return Home</button>
+
+</body>
+</html>
