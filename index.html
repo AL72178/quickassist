@@ -82,24 +82,25 @@
       <!--=============== Date Gap ===============-->
       <section class="container section section__height" id="Date-Gap">
         <h2 class="section__title">Date Gap</h2>
-
+      
         <div class="container-dategap">
           <div class="form-label boxdate">
             <form action="javascript:void(0)">
-              <label for="from" >From Date (MM-DD-YYYY):</label>
+              <label for="from">From Date (MM-DD-YYYY):</label>
               <input type="date" id="from" required />
               <label for="to">To Date (MM-DD-YYYY):</label>
               <input type="date" id="to" required />
               <br />
               <div class="btn-container">
                 <button type="button" onclick="calculate()" class="btn-primary">Calculate</button>
-                <button type="button" onclick="resetForm()" class="btn-secondary">Reset</button>
+                <button type="button" onclick="resetCalc()" class="btn-secondary">Reset</button>
               </div>
             </form>
             <p id="result"></p>
           </div>
         </div>
       </section>
+      
 
       <!--=============== Julian Convert ===============-->
       <section class="container section section__height" id="Julian-Convert">
@@ -204,7 +205,7 @@
                 <div class="btncounter">
                     <span class="textCounter" id="charCount">Characters: 0</span> <!-- Added label "Characters: " -->
                     <button id="divideButton" class="btn-primary">Divide Text</button>
-                    <button id="resetButton" class="btn-secondary">Reset</button>
+                    <button id="resetBtn" class="btn-secondary">Reset</button>
                 </div>
             </div>
         </div>

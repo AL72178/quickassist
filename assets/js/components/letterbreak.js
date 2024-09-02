@@ -6,7 +6,7 @@ const charCountElement = document.getElementById('charCount');
 // Attach event listeners programmatically
 inputTextElement.addEventListener('input', countCharacters);
 document.getElementById('divideButton').addEventListener('click', divideText);
-document.getElementById('resetButton').addEventListener('click', resetText);
+document.getElementById('resetBtn').addEventListener('click', resetText);
 
 function divideText() {
     const inputText = inputTextElement.value;

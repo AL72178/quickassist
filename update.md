@@ -54,3 +54,18 @@ QUick Assist V3.0
 ## Smart Log.
 
 -- Still Under-Developement
+
+
+
+### Update -- 09/03/2024 
+QUick Assist V3.1.0
+
+## Date Gap 
+1. Reset button is working now
+
+## Letter Break
+1. Reset button is working now.
+
+## Smart Log.
+
+-- Still Under-Developement
