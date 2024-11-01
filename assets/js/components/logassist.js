@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initially hide the output container
+    const outputContainer = document.querySelector('.output-container');
+    outputContainer.style.display = 'none';
+
     // Retrieve the stored Identifier from localStorage, or set a default if not present
     let identifier = localStorage.getItem('identifier');
     if (!identifier) {
@@ -105,15 +109,14 @@ function displayOutput(text) {
     const outputContainer = document.querySelector('.output-container');
     const outputElement = document.getElementById('output');
     
-    outputElement.textContent = text;
-    outputContainer.style.display = 'block';
+    outputElement.textContent = text.toUpperCase();
+    outputContainer.style.display = 'block'; // Show the output container when called
 }
 
 function copyToClipboard() {
     const output = document.getElementById('output').textContent;
     navigator.clipboard.writeText(output).then(() => {
-        // No alert is needed
-        // Change copy button appearance to indicate copy action completed
+    
         const copyButton = document.querySelector('.copy-button');
         copyButton.innerHTML = 'Copied <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="white" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>';
         setTimeout(() => {
@@ -167,7 +170,10 @@ function resetForm() {
     document.getElementById('req_id').value = '';
     document.getElementById('arc').value = '';
     document.getElementById('mlh').value = '';
-    document.getElementById('identifier').value = '';
     document.getElementById('reason').value = 'Adjustment made in claim as per ';
     document.getElementById('output').textContent = '';
+
+    // Hide the output container when reset is clicked
+    const outputContainer = document.querySelector('.output-container');
+    outputContainer.style.display = 'none';
 }

@@ -71,6 +71,11 @@ img {
   font-weight: 600;
 }
 
+.theme-toggle {
+  /* background-color: red; */
+  font-size: 23px;
+}
+
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;

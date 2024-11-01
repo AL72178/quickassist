@@ -25,7 +25,6 @@ html {
 
   /*========== Colors ==========*/
   --first-color: #695CFE;
-  --first-color-light: #F4F0FA;
   --title-color: #19181B;
   --text-color: #58555E;
   --text-color-light: #A5A1AA;
@@ -69,22 +68,14 @@ html {
   --z-fixed: 100;
 }
 
-[data-theme="dark"] {
-  --body-color: var(--body-color-dark);
-  --container-color: var(--container-color-dark);
-  --text-color: var(--text-color-dark);
-  --box-shadow: var(--box-shadow-dark);
-}
 
-header[data-theme="dark"] {
-  background-color: var(--first-color-dark); 
-}
 
 .dark-mode {
   --body-color: var(--body-color-dark);
   --container-color: var(--container-color-dark);
   --text-color: var(--text-color-dark);
-  --box-shadow: var(--box-shadow-dark);
+  --title-color: #edeffd;
+  --box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5);
 }
 
 .bx-sun {

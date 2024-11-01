@@ -1,5 +1,5 @@
 ### Update -- 06/30/2024 
-QUick Assist V2.0
+Quick Assist V2.0
 
 ## Log Assist. 
 
@@ -15,7 +15,7 @@ QUick Assist V2.0
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 ### Update -- 07/06/2024 
-QUick Assist V2.1.0
+Quick Assist V2.1.0
 
 ## Log Out Page
 -- Logout Page style is updated. New Look provided to logout.
@@ -41,7 +41,7 @@ QUick Assist V2.1.0
 
 
 ### Update -- 07/30/2024 
-QUick Assist V3.0
+Quick Assist V3.0
 
 -- Major Modification Made in the website, interms of UI, and Overall Look.
 
@@ -58,7 +58,7 @@ QUick Assist V3.0
 
 
 ### Update -- 09/03/2024 
-QUick Assist V3.1.0
+Quick Assist V3.1.0
 
 ## Date Gap 
 1. Reset button is working now
@@ -68,4 +68,15 @@ QUick Assist V3.1.0
 
 ## Smart Log.
 
+-- Still Under-Developement
+
+### Update -- 02/11/2024 
+Quick Assist V3.2.0
+-- Dark theme Addded
+
+## Letter Break
+1. Output container modified.
+2. Minor twicks performed.
+
+## Smart Log.
 -- Still Under-Developement
