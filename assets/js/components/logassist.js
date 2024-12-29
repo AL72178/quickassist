@@ -1,51 +1,35 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Initially hide the output container
+document.addEventListener('DOMContentLoaded', function () {
     const outputContainer = document.querySelector('.output-container');
     outputContainer.style.display = 'none';
 
-    // Retrieve the stored Identifier from localStorage, or set a default if not present
-    let identifier = localStorage.getItem('identifier');
-    if (!identifier) {
-        identifier = ''; // Set an empty default value
-    }
-
-    // Set the initial value of the input field
-    document.getElementById('identifier').value = identifier;
-
-    document.getElementById('partialLogButton').addEventListener('click', function() {
+    document.getElementById('partialLogButton').addEventListener('click', function () {
         const adjustmentNote = document.getElementById('reason').value;
-        const modeToggle = document.getElementById('modeToggle');
-        const formattedText = modeToggle.checked ? formatLinesCIW(adjustmentNote, 74) : formatLinesWGS(adjustmentNote, 74);
+        const formattedText = formatLinesWGS(adjustmentNote, 74); // Always use WGS formatting
         displayOutput(formattedText);
     });
 
-    document.getElementById('completeLogButton').addEventListener('click', function(event) {
+    document.getElementById('completeLogButton').addEventListener('click', function (event) {
         event.preventDefault();
         const reqId = formatText(document.getElementById('req_id').value);
         const arc = formatText(document.getElementById('arc').value);
         const mlhInput = document.getElementById('mlh').value; // Get date from input
-        const mlhJulian = isJulianDate(mlhInput) ? mlhInput : gregorianToJulianDate(mlhInput); // Check if the date is Julian or convert if Gregorian
-        const identifier = formatText(document.getElementById('identifier').value);
-
-        // Store the updated identifier in localStorage
-        localStorage.setItem('identifier', identifier);
-
+        const mlhJulian = isJulianDate(mlhInput) ? mlhInput : gregorianToJulianDate(mlhInput); // Convert Gregorian to Julian if necessary
         const reason = formatText(document.getElementById('reason').value);
 
-        // Modify the template to include only the auto-converted Julian date
-        const template = `Inquiry No.: ${reqId} | ARC Code: ${arc} | MLH: ${mlhJulian} | ${reason} | -- ${identifier}`;
+        // Template without Domain ID
+        const template = `Inquiry No.: ${reqId} | ARC Code: ${arc} | MLH: ${mlhJulian} | ${reason}`;
 
         const modeToggle = document.getElementById('modeToggle');
         const formattedText = modeToggle.checked ? formatLinesCIW(template, 74) : formatLinesWGS(template, 74);
-        
+
         displayOutput(formattedText);
     });
 
-    document.getElementById('resetButton').addEventListener('click', function() {
+    document.getElementById('resetButton').addEventListener('click', function () {
         resetForm();
     });
 
-    document.getElementById('modeToggle').addEventListener('change', function() {
+    document.getElementById('modeToggle').addEventListener('change', function () {
         const modeLabel = document.getElementById('modeLabel');
         if (this.checked) {
             modeLabel.textContent = 'CIW';
@@ -73,9 +57,7 @@ function formatLinesWGS(text, maxLength) {
         }
     });
 
-    // Push the last line
-    lines.push(line.trim());
-
+    lines.push(line.trim()); // Push the last line
     return lines.join('\n');
 }
 
@@ -88,16 +70,14 @@ function formatLinesCIW(text, maxLength) {
         if ((line + word).length <= maxLength) {
             line += word + ' ';
         } else {
-            // Pad the line with '_' to reach maxLength
-            line = line.trim().padEnd(maxLength, '_');
+            line = line.trim().padEnd(maxLength, '_'); // Pad to maxLength
             lines.push(line);
             line = word + ' ';
         }
     });
 
-    // Push the last line without padding if it's the identifier line
     if (line.includes('--')) {
-        lines.push(line.trim());
+        lines.push(line.trim()); // Do not pad the identifier line
     } else {
         lines.push(line.trim());
     }
@@ -108,7 +88,7 @@ function formatLinesCIW(text, maxLength) {
 function displayOutput(text) {
     const outputContainer = document.querySelector('.output-container');
     const outputElement = document.getElementById('output');
-    
+
     outputElement.textContent = text.toUpperCase();
     outputContainer.style.display = 'block'; // Show the output container when called
 }
@@ -116,7 +96,6 @@ function displayOutput(text) {
 function copyToClipboard() {
     const output = document.getElementById('output').textContent;
     navigator.clipboard.writeText(output).then(() => {
-    
         const copyButton = document.querySelector('.copy-button');
         copyButton.innerHTML = 'Copied <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="white" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>';
         setTimeout(() => {
@@ -133,7 +112,6 @@ function gregorianToJulianDate(gregorianDate) {
     const day = parseInt(dateParts[1]);
     const year = parseInt(dateParts[2]);
 
-    // Calculate Julian day of the year
     let julianDay = day;
     for (let m = 1; m < month; m++) {
         switch (m) {
@@ -148,13 +126,8 @@ function gregorianToJulianDate(gregorianDate) {
         }
     }
 
-    // Calculate Julian year part (last two digits of year)
     const julianYear = year.toString().slice(-2);
-
-    // Combine year part and day part
-    const julianDate = julianYear + julianDay.toString().padStart(3, '0');
-
-    return julianDate;
+    return julianYear + julianDay.toString().padStart(3, '0');
 }
 
 function isLeapYear(year) {
@@ -162,8 +135,7 @@ function isLeapYear(year) {
 }
 
 function isJulianDate(date) {
-    // Check if the date is in Julian format (assuming a simple 5-digit format: YYDDD)
-    return /^\d{5}$/.test(date);
+    return /^\d{5}$/.test(date); // Check if the date is in Julian format
 }
 
 function resetForm() {
@@ -173,7 +145,6 @@ function resetForm() {
     document.getElementById('reason').value = 'Adjustment made in claim as per ';
     document.getElementById('output').textContent = '';
 
-    // Hide the output container when reset is clicked
     const outputContainer = document.querySelector('.output-container');
     outputContainer.style.display = 'none';
 }
