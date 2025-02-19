@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const template = `Inquiry No.: ${reqId} | ARC Code: ${arc} | MLH: ${mlhJulian} | ${reason}`;
 
         const modeToggle = document.getElementById('modeToggle');
-        const formattedText = modeToggle.checked ? formatLinesCIW(template, 74) : formatLinesWGS(template, 74);
+        const formattedText = modeToggle.checked ? formatLinesCIW(template, 73) : formatLinesWGS(template, 74);
 
         displayOutput(formattedText);
     });
